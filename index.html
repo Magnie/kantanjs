@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            KantanJS
+        </title>
+
+        <link rel="stylesheet" href="kantan.css">
+        <script src="kantan.js"></script>
+    </head>
+
+    <body>
+        <h1>KantanJS</h1>
+        <p k-show="true">
+            This paragraph is visible!
+        </p>
+
+        <div class="flex-column">
+            <p
+                k-show="show"
+                class="align-center"
+            >
+                This paragraph is not visible!
+            </p>
+            <button type="button">
+                Test
+            </button>
+        </div>
+    </body>
+</html>
