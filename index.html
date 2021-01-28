@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            KantanJS
+            About Joseph Augustine (and KantanJS)
         </title>
 
         <link rel="stylesheet" href="lib/kantan.css">
@@ -12,28 +12,82 @@
 
     <body id="app">
         <header>
+            <div class="flex-column align-items-center">
+                <img
+                    src="app/images/me.jpg"
+                    alt="picture of Joseph Augustine"
+                    height="250"
+                >
+                <h1>Joseph Augustine</h1>
+            </div>
+            <nav class="flex-column align-items-center">
+                <div class='flex-row'>
+                    <button
+                        type="button"
+                        class="blue"
+                    >
+                        Home
+                    </button>
+
+                    <button
+                        type="button"
+                        class="blue"
+                    >
+                        RPG
+                    </button>
+                </div>
+            </nav>
         </header>
 
         <main>
-          <h1>KantanJS</h1>
-          <p k-show="false">
-              This paragraph is not visible!
-          </p>
+            <section>
+                <h2
+                    k-click="toggle_personal_info"
+                    class="btn text--default"
+                >
+                    Personal Info
+                </h2>
+                <ul k-show="show_personal_info">
+                    <li>
+                        <strong>Major</strong>:
+                        Computer Science
+                    </li>
+                    <li>
+                        <strong>High School</strong>:
+                        Mountain Heights Academy 2015
+                    </li>
+                    <li>
+                        <strong>Current year at UVU</strong>:
+                        Sophomore (I think?)
+                    </li>
+                    <li>
+                        <strong>Favorite ice cream</strong>:
+                        Sea salt caramel ice cream is my favorite!
+                    </li>
+                </ul>
+            </section>
 
-          <div class="flex-column">
-              <p
-                  k-show="test"
-                  class="align-center"
-              >
-                  This paragraph is visible!
-              </p>
-              <button
-                  type="button"
-                  k-click="test_click"
-              >
-                  Test
-              </button>
-          </div>
+            <section>
+                <h1>KantanJS</h1>
+                <p k-show="false">
+                    This paragraph is not visible!
+                </p>
+
+                <div class="flex-column">
+                    <p
+                        k-show="test"
+                        class="align-center"
+                        >
+                        This paragraph is visible!
+                    </p>
+                    <button
+                        type="button"
+                        k-click="test_click"
+                    >
+                        Test
+                    </button>
+                </div>
+            </section>
         </main>
 
         <footer>
