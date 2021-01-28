@@ -13,7 +13,13 @@ function attach_kantan(controller) {
         let elements = document.querySelectorAll(SHOW_SELECTOR)
         for (const element of elements) {
             let value = element.getAttribute(SHOW_ATTR)
-            if (value == FALSE) {
+            if (![TRUE, FALSE].includes(value)) {
+                value = controller.data[value]
+            } else {
+                value = value === TRUE ? true : false
+            }
+
+            if (!value) {
                 element.style.display = 'none'
                 continue
             }
@@ -26,26 +32,40 @@ function attach_kantan(controller) {
     function _eval_click() {
         let elements = document.querySelectorAll(CLICK_SELECTOR)
         for (const element of elements) {
-            element.$k_listeners = []
             let value = element.getAttribute(CLICK_ATTR)
             if (!controller.methods[value]) {
                 throw new Error(`${value} is not defined in controller.methods!`)
             }
-            element.$k_listeners.push(
-                element.addEventListener('click', () => {
-                    controller.methods[value]()
-                })
-            )
+
+            if (!element.$has_click) {
+                element.addEventListener(
+                    'click',
+                    () => {
+                        controller.methods[value]()
+                    }
+                )
+                element.$has_click = true
+            }
         }
     }
 
-    controller.$refresh = function() {
-        _eval_show()
-        _eval_click()
+    // A bit dirty.. but it works.
+    controller.methods = {
+        // Copy original methods
+        ...controller.methods,
+
+        // Make sure methods have access to data
+        data: controller.data,
+
+        // Internal methods that we want to expose
+        $refresh() {
+            _eval_show()
+            _eval_click()
+        },
     }
 
     window.addEventListener('load', function() {
-        controller.$refresh()
+        controller.methods.$refresh()
     })
 
     return controller

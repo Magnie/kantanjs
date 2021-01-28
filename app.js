@@ -1,12 +1,13 @@
 kantan_app = attach_kantan({
     element_id: '#app',
     data: {
-        test: 1,
+        test: true,
     },
 
     methods: {
         test_click() {
-            console.log('clicked!')
+            this.data.test = !this.data.test
+            this.$refresh()
         },
     },
 })
