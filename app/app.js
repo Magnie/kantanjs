@@ -1,6 +1,11 @@
 kantan_app = attach_kantan({
     element_id: '#app',
     data: {
+        box: [
+            'a',
+            'b',
+            'c',
+        ],
         show_personal_info: false,
         show_books: false,
         show_haiku: false,
@@ -9,6 +14,10 @@ kantan_app = attach_kantan({
     },
 
     methods: {
+        add_thing() {
+            this.data.box.push('d')
+        },
+
         toggle_personal_info() {
             this.data.show_personal_info = !this.data.show_personal_info
         },

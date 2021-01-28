@@ -40,6 +40,16 @@
         </header>
 
         <main>
+            <button
+                k-click="add_thing"
+                type="button"
+            >
+                Add Thing
+            </button>
+            Box:
+            <ul k-for="thing in box">
+                <li>item</li>
+            </ul>
             <section>
                 <h2
                     k-click="toggle_personal_info"
