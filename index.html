@@ -45,7 +45,7 @@
                     k-click="toggle_personal_info"
                     class="btn text--default"
                 >
-                    Personal Info
+                    Personal info
                 </h2>
                 <ul k-show="show_personal_info">
                     <li>
@@ -68,24 +68,272 @@
             </section>
 
             <section>
-                <h1>KantanJS</h1>
-                <p k-show="false">
-                    This paragraph is not visible!
-                </p>
+                <h2
+                    k-click="toggle_books"
+                    class="btn text--default"
+                >
+                    Favorite books
+                </h2>
+                <ol k-show="show_books">
+                    <li>
+                        <em>Ender's Shadow</em>,
+                        <a href="http://www.hatrack.com/">Orson Scott Card</a>
+                    </li>
+                    <li>
+                        <em>Ender's Game</em>,
+                        <a href="http://www.hatrack.com/">Orson Scott Card</a>
+                    </li>
+                    <li>
+                        <em>Fablehaven</em>,
+                        <a href="http://brandonmull.com/">Brandon Mull</a>
+                    </li>
+                    <li>
+                        <em>Arpia</em>,
+                        <a href="https://www.arpia.be/">Peter A. Craddock</a>
+                    </li>
+                    <li>
+                        <em>Magic Tree House</em>,
+                        <a href="https://www.magictreehouse.com/">Mary Pope Osborne</a>
+                    </li>
+                </ol>
+            </section>
 
-                <div class="flex-column">
-                    <p
-                        k-show="test"
-                        class="align-center"
-                        >
-                        This paragraph is visible!
+            <section>
+                <h2
+                    k-click="toggle_haiku"
+                    class="btn text--default"
+                >
+                    title of haiku
+                </h2>
+                <div k-show="show_haiku">
+                    <p>
+                        line one
+                        <br>line two
+                        <br>line three
+                        <br>line four
                     </p>
-                    <button
-                        type="button"
-                        k-click="test_click"
-                    >
-                        Test
-                    </button>
+                    <p>
+                        inspiration..
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2
+                    k-click="toggle_essay"
+                    class="btn text--default"
+                >
+                    My personal interests
+                </h2>
+                <div k-show="show_essay">
+                    <p>
+                        Ballroom dance
+                    </p>
+                    <p>
+                        Programming
+                    </p>
+                    <p>
+                        Japanese/Anime
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2
+                    k-click="toggle_schedule"
+                    class="btn text--default"
+                >
+                    Class schedule
+                </h2>
+                <div
+                    k-show="show_schedule"
+                    style="max-width: 100%; overflow: scroll"
+                >
+                    <table>
+                        <tr>
+                            <th width="100">
+                                <!-- Time -->
+                            </th>
+                            <th>
+                                Monday
+                            </th>
+                            <th>
+                                Tuesday
+                            </th>
+                            <th>
+                                Wednesday
+                            </th>
+                            <th>
+                                Thursday
+                            </th>
+                            <th>
+                                Friday
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                8:00 AM
+                            </td>
+
+                            <td rowspan="9">
+                                Work
+                            </td>
+
+                            <td>
+                                Work
+                            </td>
+
+                            <td rowspan="2" colspan="3">
+                                Work
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                9:00 AM
+                            </td>
+
+                            <td>
+                                Bug meeting
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                10:00 AM
+                            </td>
+
+                            <td colspan="4">
+                                Daily standup
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                11:00 AM
+                            </td>
+
+                            <td rowspan="2">
+                                Work
+                            </td>
+
+                            <td>
+                                Work
+                            </td>
+
+                            <td rowspan="3">
+                                Work
+                            </td>
+
+                            <td>
+                                Work
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                12:00 PM
+                            </td>
+
+                            <td>
+                                Code Review
+                            </td>
+
+                            <td>
+                                Collaboration Meeting
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                1:00 PM
+                            </td>
+
+                            <td>
+                                Co-worker's Env. Setup
+                            </td>
+
+                            <td rowspan="4">
+                                Work
+                            </td>
+
+                            <td rowspan="4">
+                                Work
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                2:00 PM
+                            </td>
+
+                            <td>
+                                Work
+                            </td>
+
+                            <td>
+                                Priority meeting \w Execs
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                3:00 PM
+                            </td>
+
+                            <td>
+                                Another Co-worker's Env. Setup
+                            </td>
+
+                            <td rowspan="2">
+                                Work
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                4:00 PM
+                            </td>
+
+                            <td>
+                                Work
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                5:00 PM
+                            </td>
+
+                            <td colspan="2">
+                            </td>
+
+                            <td rowspan="2">
+                                Web Programming I
+                            </td>
+
+                            <td
+                                colspan="2"
+                                rowspan="2"
+                            >
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                6:00 PM
+                            </td>
+
+                            <td>
+                                Dinner
+                            </td>
+
+                            <td>
+                                Dinner
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </section>
         </main>

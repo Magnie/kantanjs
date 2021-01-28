@@ -32,7 +32,7 @@ button:active, .btn:active {
 
 button.blue {
     background-color: rgba(0, 0, 255, .05);
-    color: rgb(25, 25, 25);
+    color: darkslategrey;
     border: 0;
     padding: 8px;
 }
@@ -43,6 +43,18 @@ button.blue:hover {
 
 button.blue:active {
     background-color: rgba(0, 0, 255, .15);
+}
+
+tr, td {
+    border: 1px solid black;
+}
+
+td {
+    text-align: center;
+    padding: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Custom Classes */
