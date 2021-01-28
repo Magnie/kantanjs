@@ -1,6 +1,14 @@
 /* Element Overrides */
 body {
     font-family: Verdana;
+    font-size: 18px;
+}
+
+@media (min-width: 900px) {
+    body {
+        padding-left: 128px;
+        padding-right: 128px;
+    }
 }
 
 h1, h2, h3, h4, h5 {
@@ -20,6 +28,15 @@ button, .btn {
     border-radius: 4px;
     cursor: pointer;
     margin: 4px;
+}
+
+button {
+    font-size: 1.01em;
+}
+
+nav button {
+    width: 100%;
+    flex-grow: 1;
 }
 
 button:hover, .btn:hover {
