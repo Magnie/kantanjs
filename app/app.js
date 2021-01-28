@@ -6,7 +6,6 @@ kantan_app = attach_kantan({
             1,
             2,
         ],
-        test_string: 'Add thing',
         show_personal_info: false,
         show_books: false,
         show_haiku: false,
@@ -15,8 +14,12 @@ kantan_app = attach_kantan({
     },
 
     methods: {
-        add_thing() {
+        append_thing() {
             this.data.box.push(this.data.box.length)
+        },
+
+        pop_thing() {
+            this.data.box.pop()
         },
 
         toggle_personal_info() {

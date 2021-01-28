@@ -40,17 +40,27 @@
         </header>
 
         <main>
-            <button
-                k-text="test_string"
-                k-click="add_thing"
-                type="button"
-            >
-                Something else
-            </button>
-            Box:
-            <ul k-for="thing in box">
-                <li k-text="thing">item</li>
-            </ul>
+            <section>
+                <h2>
+                    Box:
+                </h2>
+                <button
+                    k-click="append_thing"
+                    type="button"
+                >
+                    Append thing
+                </button>
+                <ul k-for="thing in box">
+                    <li k-text="thing">item</li>
+                </ul>
+                <button
+                    k-click="pop_thing"
+                    type="button"
+                >
+                    Pop thing
+                </button>
+            </section>
+
             <section>
                 <h2
                     k-click="toggle_personal_info"
