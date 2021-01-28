@@ -41,14 +41,15 @@
 
         <main>
             <button
+                k-text="test_string"
                 k-click="add_thing"
                 type="button"
             >
-                Add Thing
+                Something else
             </button>
             Box:
             <ul k-for="thing in box">
-                <li>item</li>
+                <li k-text="thing">item</li>
             </ul>
             <section>
                 <h2
