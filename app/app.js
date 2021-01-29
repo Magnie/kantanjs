@@ -1,5 +1,5 @@
 kantan_app = attach_kantan({
-    element_id: '#app',
+    element_id: 'app',
     data: {
         box: [
             0,
