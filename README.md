@@ -23,3 +23,22 @@ Name: Joseph Augustine
 In order to provide a more modern feel and use modern components, I am using
 flex box as a way to layout the page. I also modified the default button
 styling to look a little cleaner and minimalistic.
+
+Completed items:
+1. CSS Web Fronts - Using the Verdana font (sans-serif)
+2. Hero image
+3. Background parallax effect
+4. Put a nav menu somewhere on your page (done)
+5. Nav menu with highlights
+6. Sticky nav with auto-highlight
+7. Sticky nav menu
+8. Sticky footer
+9. Center your document
+10. Set repeating background image
+    a. Needs text?
+    b. Underline only appears when you mouse over?
+    c. Indent your poem
+11. Style your weekly schedule (text alignment, color-coded blocks, equal column widths)
+12. Striped table columns (third color for header)
+13. Add a favicon
+14. Bring up the portait in a modal

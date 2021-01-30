@@ -2,10 +2,12 @@
 body {
     font-family: Verdana;
     font-size: 18px;
+    padding: 0;
+    margin: 0;
 }
 
 @media (min-width: 900px) {
-    body {
+    main {
         padding-left: 128px;
         padding-right: 128px;
     }
@@ -74,6 +76,14 @@ td {
     text-overflow: ellipsis;
 }
 
+.bg-black {
+    background-color: black!important;
+}
+
+.text-white {
+    color: white!important;
+}
+
 /* Custom Classes */
 .flex-column {
     display: flex;
@@ -93,6 +103,39 @@ td {
     align-items: center;
 }
 
+.font-weight-normal {
+    font-weight: normal;
+}
+
 .text--default {
     color: slategrey!important;
+}
+
+.vh-100 {
+    height: 100vh!important;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* Taken from: https://www.w3schools.com/howto/howto_css_parallax.asp */
+.parallax {
+    /* The image used should be specified in code */
+    /* background-image: url("../app/images/me.jpg"); */
+
+    /* Full height */
+    min-height: 100%;
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white!important;
 }
