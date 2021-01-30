@@ -13,9 +13,9 @@ Goals:
 * k-show for showing/hiding elements (complete)
 * k-click for simple DOM interaction (complete)
 * k-for to simplify looping over an array and creating relevant elements (complete)
-* k-text insert text via variable
-* Custom components for content used across pages
-* Recursive parsing for k-for elements?
+* k-text insert text via variable (complete)
+* k-external for loading external HTML fragments (complete)
+* Recursive parsing for k-for elements (complete)
 
 == External Requirements...
 Name: Joseph Augustine

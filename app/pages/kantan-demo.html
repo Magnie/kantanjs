@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            About Joseph Augustine (and KantanJS)
+        </title>
+
+        <link rel="stylesheet" href="/lib/kantan.css">
+        <script src="/lib/kantan.js"></script>
+
+        <link rel="stylesheet" href="/app/app.css">
+        <script src="/app/app.js"></script>
+    </head>
+
+    <body id="app">
+        <header k-external="/app/components/TheHeader.html"></header>
+
+        <main>
+            <section>
+                <ul k-for="one in test">
+                    <li>
+                        <ol k-for="two in one">
+                            <li k-text="two">
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>
+                    Box:
+                </h2>
+                <button
+                    k-click="append_thing"
+                    type="button"
+                >
+                    Append thing
+                </button>
+                <ul k-for="thing in box">
+                    <li>
+                        <p>test</p>
+                        <p k-text="thing">
+                        </p>
+                    </li>
+                </ul>
+                <button
+                    k-click="pop_thing"
+                    type="button"
+                >
+                    Pop thing
+                </button>
+            </section>
+        </main>
+
+        <footer>
+        </footer>
+    </body>
+</html>

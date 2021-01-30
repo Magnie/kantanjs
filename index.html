@@ -13,74 +13,9 @@
     </head>
 
     <body id="app">
-        <header>
-            <div class="vh-100 parallax app-background-me flex-row align-items-center">
-                <div class="w-100 flex-column align-items-center">
-                    <div>
-                        <h1 class="text-white">Joseph Augustine</h1>
-                        <h2 class="text-white font-weight-normal">
-                            Software Engineer
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <nav class="flex-column">
-                <div class='flex-row'>
-                    <button
-                        type="button"
-                        class="blue"
-                    >
-                        Home
-                    </button>
-
-                    <button
-                        type="button"
-                        class="blue"
-                    >
-                        RPG
-                    </button>
-                </div>
-            </nav>
-        </header>
+        <header k-external="/app/components/TheHeader.html"></header>
 
         <main>
-            <section>
-                <ul k-for="one in test">
-                    <li>
-                        <ol k-for="two in one">
-                            <li k-text="two">
-                            </li>
-                        </ol>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>
-                    Box:
-                </h2>
-                <button
-                    k-click="append_thing"
-                    type="button"
-                >
-                    Append thing
-                </button>
-                <ul k-for="thing in box">
-                    <li>
-                        <p>test</p>
-                        <p k-text="thing">
-                        </p>
-                    </li>
-                </ul>
-                <button
-                    k-click="pop_thing"
-                    type="button"
-                >
-                    Pop thing
-                </button>
-            </section>
-
             <section>
                 <h2
                     k-click="toggle_personal_info"

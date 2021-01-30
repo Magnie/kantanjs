@@ -30,13 +30,15 @@ button, .btn {
     border-radius: 4px;
     cursor: pointer;
     margin: 4px;
+    text-decoration: none;
+    text-align: center;
 }
 
 button {
     font-size: 1.01em;
 }
 
-nav button {
+nav button, nav .btn {
     width: 100%;
     flex-grow: 1;
 }
@@ -49,18 +51,18 @@ button:active, .btn:active {
     background-color: rgba(0, 0, 0, .15);
 }
 
-button.blue {
+button.blue, .btn.blue {
     background-color: rgba(0, 0, 255, .05);
     color: darkslategrey;
     border: 0;
     padding: 8px;
 }
 
-button.blue:hover {
+button.blue:hover, .btn.blue:hover {
     background-color: rgba(0, 0, 255, .1);
 }
 
-button.blue:active {
+button.blue:active, .btn.blue:active {
     background-color: rgba(0, 0, 255, .15);
 }
 
