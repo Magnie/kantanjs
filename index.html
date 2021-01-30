@@ -41,6 +41,17 @@
 
         <main>
             <section>
+                <ul k-for="one in test">
+                    <li>
+                        <ol k-for="two in one">
+                            <li k-text="two">
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
                 <h2>
                     Box:
                 </h2>

@@ -6,6 +6,11 @@ kantan_app = attach_kantan({
             1,
             2,
         ],
+
+        test: [
+            [0, 1, 2],
+            ['a', 'b', 'c', 'd'],
+        ],
         show_personal_info: false,
         show_books: false,
         show_haiku: false,
