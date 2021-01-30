@@ -26,13 +26,13 @@ styling to look a little cleaner and minimalistic.
 
 Completed items:
 1. CSS Web Fronts - Using the Verdana font (sans-serif)
-2. Hero image
-3. Background parallax effect
-4. Put a nav menu somewhere on your page (done)
+2. Hero image - Done
+3. Background parallax effect - Done
+4. Put a nav menu somewhere on your page - Done
 5. Nav menu with highlights
 6. Sticky nav with auto-highlight
-7. Sticky nav menu
-8. Sticky footer
+7. Sticky nav menu - Done
+8. Sticky footer - Done
 9. Center your document
 10. Set repeating background image
     a. Needs text?

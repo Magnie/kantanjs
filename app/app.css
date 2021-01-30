@@ -4,3 +4,35 @@
         rgba(0, 0, 0, .5)
     ), url('images/me.jpg');
 }
+
+header {
+    position: sticky;
+    /* Because the hero image is 100vh */
+    top: -100vh;
+    background-color: white;
+    z-index: 10;
+}
+
+main {
+    /* Because the sticky footer is 48px */
+    padding-bottom: 48px;
+}
+
+footer {
+    z-index: 9;
+    position: fixed;
+    bottom: 0;
+    height: 48px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer > p {
+    width: 100%;
+    margin: 0;
+    padding-right: 8px;
+    text-align: right;
+}
