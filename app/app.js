@@ -11,11 +11,12 @@ kantan_app = attach_kantan({
             [0, 1, 2],
             ['a', 'b', 'c', 'd'],
         ],
-        show_personal_info: false,
-        show_books: false,
-        show_haiku: false,
-        show_essay: false,
-        show_schedule: false,
+        show_personal_info: true,
+        show_books: true,
+        show_haiku: true,
+        show_essay: true,
+        show_schedule: true,
+        show_portait: false,
     },
 
     methods: {
@@ -45,6 +46,14 @@ kantan_app = attach_kantan({
 
         toggle_schedule() {
             this.data.show_schedule = !this.data.show_schedule
+        },
+
+        show_modal() {
+            this.data.show_portait = true
+        },
+
+        hide_modal() {
+            this.data.show_portait = false
         },
     },
 })

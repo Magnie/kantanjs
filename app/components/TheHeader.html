@@ -1,4 +1,7 @@
-<div class="vh-100 parallax app-background-me flex-row align-items-center">
+<div
+    class="vh-100 parallax app-background-me flex-row align-items-center"
+    k-click="show_modal"
+>
     <div class="w-100 flex-column align-items-center">
         <div>
             <h1 class="text-white">Joseph Augustine</h1>
@@ -6,6 +9,20 @@
                 Software Engineer
             </h2>
         </div>
+    </div>
+</div>
+
+<div
+    k-show="show_portait"
+    k-click="hide_modal"
+    class="overlay"
+>
+    <div class="modal">
+        <div
+            k-click="hide_modal"
+            class="modal-close"
+        >&times;</div>
+        <img width="100%" src="/app/images/me.jpg" />
     </div>
 </div>
 

@@ -2,7 +2,7 @@
     background-image: linear-gradient(
         rgba(0, 0, 0, .5),
         rgba(0, 0, 0, .5)
-    ), url('images/me.jpg');
+    ), url('/app/images/me.jpg');
 }
 
 header {
@@ -16,6 +16,25 @@ header {
 main {
     /* Because the sticky footer is 48px */
     padding-bottom: 48px;
+}
+
+body {
+    /* Taken from https://stackoverflow.com/questions/21616520 */
+    background-image: url('https://i.stack.imgur.com/LCCB6.jpg');
+    background-repeat: repeat;
+}
+
+section {
+    background-color: white;
+    padding: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 footer {
@@ -35,4 +54,29 @@ footer > p {
     margin: 0;
     padding-right: 8px;
     text-align: right;
+}
+
+th {
+    width: 302px;
+    min-width: 302px;
+}
+
+td.work {
+    background-color: rgb(214, 79, 84);
+    color: white;
+}
+
+td.meeting {
+    background-color: rgb(123, 101, 182);
+    color: white;
+}
+
+td.school {
+    background-color: rgb(90, 154, 62);
+    color: white;
+}
+
+td.other {
+    background-color: rgb(47, 97, 206);
+    color: white;
 }

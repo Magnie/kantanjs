@@ -17,6 +17,27 @@
 
         <main>
             <section>
+                Table of Contents
+                <ul>
+                    <li>
+                        <a href="#personal_info">Information</a>
+                    </li>
+                    <li>
+                        <a href="#books">Books</a>
+                    </li>
+                    <li>
+                        <a href="#haiku">Haiku</a>
+                    </li>
+                    <li>
+                        <a href="#essay">Interests</a>
+                    </li>
+                    <li>
+                        <a href="#schedule">Schedule</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="personal_info">
                 <h2
                     k-click="toggle_personal_info"
                     class="btn text--default"
@@ -43,7 +64,7 @@
                 </ul>
             </section>
 
-            <section>
+            <section id="books">
                 <h2
                     k-click="toggle_books"
                     class="btn text--default"
@@ -74,27 +95,42 @@
                 </ol>
             </section>
 
-            <section>
+            <section id="haiku">
                 <h2
                     k-click="toggle_haiku"
                     class="btn text--default"
                 >
-                    title of haiku
+                    The Zen of Python
                 </h2>
                 <div k-show="show_haiku">
-                    <p>
-                        line one
-                        <br>line two
-                        <br>line three
-                        <br>line four
+                    <p style="padding-left: 24px">
+                        <br>Beautiful is better than ugly.
+                        <br>Explicit is better than implicit.
+                        <br>Simple is better than complex.
+                        <br>Complex is better than complicated.
+                        <br>Flat is better than nested.
+                        <br>Sparse is better than dense.
+                        <br>Readability counts.
+                        <br>Special cases aren't special enough to break the rules.
+                        <br>Although practicality beats purity.
+                        <br>Errors should never pass silently.
+                        <br>Unless explicitly silenced.
+                        <br>In the face of ambiguity, refuse the temptation to guess.
+                        <br>There should be one-- and preferably only one --obvious way to do it.
+                        <br>Although that way may not be obvious at first unless you're Dutch.
+                        <br>Now is better than never.
+                        <br>Although never is often better than *right* now.
+                        <br>If the implementation is hard to explain, it's a bad idea.
+                        <br>If the implementation is easy to explain, it may be a good idea.
+                        <br>Namespaces are one honking great idea -- let's do more of those!
                     </p>
                     <p>
-                        inspiration..
+                        I know this is a cop out on writing my own poem, but I really like this "poem" because it is has been very influential in my personal study of programming. I find that every time I read it, I realize there is something I need to improve on in my programming allowing me to continually improve.
                     </p>
                 </div>
             </section>
 
-            <section>
+            <section id="essay">
                 <h2
                     k-click="toggle_essay"
                     class="btn text--default"
@@ -103,18 +139,18 @@
                 </h2>
                 <div k-show="show_essay">
                     <p>
-                        Ballroom dance
+                        I used to do ballroom in elementary and high school. I was on the Lehi Ballroom Dance team and was the Varsity Captain my second year. We earned 1st place in our latin dance.
                     </p>
                     <p>
-                        Programming
+                        I've been programming since I was 11. In high school I attempted to build an MMORPG. While I wasn't able to build out the full game, I was able to design a scalable server that would separate all the areas you could be in into different zones hosted on different (or the same) physical machine where you could seemlessly transfer to different zones/servers. Turned out to be a similar idea to the way Kubernetes works.
                     </p>
                     <p>
-                        Japanese/Anime
+                        During high school I watched a lot of anime and after I graduated I started learning it together with a friend. Then we discovered that a Church member of our's was Japanese, so we asked her to teach us Japanese. After learning for about a year by visiting with her once a week or so I went to Japan as a volunteer for 2 years. Now I speak almost daily with my friend who is about to graduate in Japanese from BYU.
                     </p>
                 </div>
             </section>
 
-            <section>
+            <section id="schedule">
                 <h2
                     k-click="toggle_schedule"
                     class="btn text--default"
@@ -152,15 +188,15 @@
                                 8:00 AM
                             </td>
 
-                            <td rowspan="9">
+                            <td rowspan="9" class="work">
                                 Work
                             </td>
 
-                            <td>
+                            <td class="work">
                                 Work
                             </td>
 
-                            <td rowspan="2" colspan="3">
+                            <td rowspan="2" colspan="3" class="work">
                                 Work
                             </td>
                         </tr>
@@ -170,7 +206,7 @@
                                 9:00 AM
                             </td>
 
-                            <td>
+                            <td class="meeting">
                                 Bug meeting
                             </td>
                         </tr>
@@ -180,7 +216,7 @@
                                 10:00 AM
                             </td>
 
-                            <td colspan="4">
+                            <td colspan="4" class="meeting">
                                 Daily standup
                             </td>
                         </tr>
@@ -190,19 +226,19 @@
                                 11:00 AM
                             </td>
 
-                            <td rowspan="2">
+                            <td rowspan="2" class="work">
                                 Work
                             </td>
 
-                            <td>
+                            <td class="work">
                                 Work
                             </td>
 
-                            <td rowspan="3">
+                            <td rowspan="3" class="work">
                                 Work
                             </td>
 
-                            <td>
+                            <td class="work">
                                 Work
                             </td>
                         </tr>
@@ -212,11 +248,11 @@
                                 12:00 PM
                             </td>
 
-                            <td>
+                            <td class="meeting">
                                 Code Review
                             </td>
 
-                            <td>
+                            <td class="meeting">
                                 Collaboration Meeting
                             </td>
                         </tr>
@@ -226,15 +262,15 @@
                                 1:00 PM
                             </td>
 
-                            <td>
+                            <td class="meeting">
                                 Co-worker's Env. Setup
                             </td>
 
-                            <td rowspan="4">
+                            <td rowspan="4" class="work">
                                 Work
                             </td>
 
-                            <td rowspan="4">
+                            <td rowspan="4" class="work">
                                 Work
                             </td>
                         </tr>
@@ -244,11 +280,11 @@
                                 2:00 PM
                             </td>
 
-                            <td>
+                            <td class="work">
                                 Work
                             </td>
 
-                            <td>
+                            <td class="meeting">
                                 Priority meeting \w Execs
                             </td>
                         </tr>
@@ -258,11 +294,11 @@
                                 3:00 PM
                             </td>
 
-                            <td>
+                            <td class="meeting">
                                 Another Co-worker's Env. Setup
                             </td>
 
-                            <td rowspan="2">
+                            <td rowspan="2" class="work">
                                 Work
                             </td>
                         </tr>
@@ -272,7 +308,7 @@
                                 4:00 PM
                             </td>
 
-                            <td>
+                            <td class="work">
                                 Work
                             </td>
                         </tr>
@@ -283,9 +319,10 @@
                             </td>
 
                             <td colspan="2">
+                                Break Time!
                             </td>
 
-                            <td rowspan="2">
+                            <td rowspan="2" class="school">
                                 Web Programming I
                             </td>
 
@@ -293,6 +330,7 @@
                                 colspan="2"
                                 rowspan="2"
                             >
+                                Break Time!
                             </td>
                         </tr>
 
@@ -301,11 +339,11 @@
                                 6:00 PM
                             </td>
 
-                            <td>
+                            <td class="other">
                                 Dinner
                             </td>
 
-                            <td>
+                            <td class="other">
                                 Dinner
                             </td>
                         </tr>
