@@ -13,6 +13,29 @@ header {
     z-index: 10;
 }
 
+.table-of-contents {
+    position: sticky;
+    /* Because the hero image is 100vh */
+    top: 46px;
+    background-color: grey;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index: 100;
+    width: 190px;
+}
+
+.table-of-contents h4 {
+    color: white;
+}
+
+.table-of-contents a {
+    color: aliceblue;
+}
+
+.table-of-contents a.active {
+    font-weight: bold;
+}
+
 main {
     /* Because the sticky footer is 48px */
     padding-bottom: 48px;
@@ -59,6 +82,11 @@ footer > p {
 th {
     width: 302px;
     min-width: 302px;
+    color: slategrey;
+}
+
+tr:nth-child(even) td:nth-child(1) {
+    background-color: aliceblue;
 }
 
 td.work {

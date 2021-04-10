@@ -29,16 +29,16 @@ Completed items:
 2. Hero image - Done
 3. Background parallax effect - Done
 4. Put a nav menu somewhere on your page - Done
-5. Nav menu with highlights
-6. Sticky nav with auto-highlight
+5. Nav menu with highlights - Done
+6. Sticky nav with auto-highlight - Done
 7. Sticky nav menu - Done
 8. Sticky footer - Done
-9. Center your document
-10. Set repeating background image
-    a. Needs text?
-    b. Underline only appears when you mouse over?
-    c. Indent your poem
-11. Style your weekly schedule (text alignment, color-coded blocks, equal column widths)
-12. Striped table columns (third color for header)
+9. Center your document - Done
+10. Set repeating background image - Done
+    a. Text must be readable - Done
+    b. Underline only appears when you mouse over - Done
+    c. Indent your poem - Done
+11. Style your weekly schedule (text alignment, color-coded blocks, equal column widths) - Done
+12. Striped table columns (third color for header) - Done
 13. Add a favicon
-14. Bring up the portait in a modal
+14. Bring up the portait in a modal - Done

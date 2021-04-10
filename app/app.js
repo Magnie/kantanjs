@@ -17,6 +17,8 @@ kantan_app = attach_kantan({
         show_essay: true,
         show_schedule: true,
         show_portait: false,
+        current_link: null,
+        scroll_ticking: false,
     },
 
     methods: {
@@ -55,5 +57,40 @@ kantan_app = attach_kantan({
         hide_modal() {
             this.data.show_portait = false
         },
+
+        on_scroll(event) {
+            const table_links = this.$element.querySelectorAll('[href^="#"]')
+            let top_link
+            for (const link of table_links) {
+                link.classList.remove('active')
+                let section = this.$element.querySelector(`${link.hash}`)
+                let top = section.getBoundingClientRect().y
+                let height = section.getBoundingClientRect().height
+                if (top + height - 50 < 0) {
+                    continue
+                }
+
+                if (!top_link) {
+                    top_link = link
+                }
+            }
+
+            if (top_link) {
+                top_link.classList.add('active')
+            }
+        },
+    },
+
+    mounted() {
+        window.addEventListener('hashchange', this.methods.on_hash_change)
+        window.addEventListener('scroll', (event) => {
+            if (!this.data.scroll_ticking) {
+                window.requestAnimationFrame(() => {
+                    this.methods.on_scroll(event)
+                    this.data.scroll_ticking = false
+                })
+                this.data.scroll_ticking = true
+            }
+        })
     },
 })
