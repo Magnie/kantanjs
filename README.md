@@ -1,4 +1,4 @@
-= KantanJS
+# KantanJS
 
 Because my beginning programming class is a tad too easy, I decided to make
 KantanJS (簡単). It is a personal project to get familiar with the idea of
@@ -17,7 +17,7 @@ Goals:
 * k-external for loading external HTML fragments (complete)
 * Recursive parsing for k-for elements (complete)
 
-== External Requirements...
+## External Requirements...
 Name: Joseph Augustine
 
 In order to provide a more modern feel and use modern components, I am using
