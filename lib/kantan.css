@@ -38,6 +38,10 @@ button {
     font-size: 1.01em;
 }
 
+button.full {
+    width: 100%;
+}
+
 nav button, nav .btn {
     width: 100%;
     flex-grow: 1;
@@ -168,4 +172,24 @@ td {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, .2);
+}
+
+.margin-left {
+    margin-left: 8px;
+}
+
+.margin-left-2x {
+    margin-left: 16px;
+}
+
+.margin-right {
+    margin-right: 8px;
+}
+
+.margin-top {
+    margin-top: 8px;
+}
+
+.margin-bottom {
+    margin-bottom: 8px;
 }

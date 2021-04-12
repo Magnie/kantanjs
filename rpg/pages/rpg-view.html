@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            About Joseph Augustine (and KantanJS)
+        </title>
+
+        <link rel="stylesheet" href="/lib/kantan.css">
+        <script src="/lib/kantan.js"></script>
+
+        <link rel="stylesheet" href="/app/app.css">
+        <script src="/rpg/js/rpg-controller.js"></script>
+    </head>
+
+    <body id="app">
+        <header k-external="/app/components/TheHeader.html"></header>
+
+        <main>
+            <section>
+                <h1>RPG Characters</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Race</th>
+                            <th>Class</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody k-for="character in characters">
+                        <tr>
+                            <td k-text="character.name"></td>
+                            <td k-text="character.race"></td>
+                            <td k-text="character.class"></td>
+                            <td k-text="character.gender"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>New Character</h2>
+                <form k-submit="add_character">
+                    <label>
+                        <span>Name:</span>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                        />
+                    </label>
+
+                    <div class="margin-left-2x margin-top">
+                        <label>
+                            <span>Strength:</span>
+                            <input
+                                type="number"
+                                id="strength"
+                                name="strength"
+                            />
+                        </label>
+
+                        <label>
+                            <span>Dexterity:</span>
+                            <input
+                                type="number"
+                                id="dexterity"
+                                name="dexterity"
+                            />
+                        </label>
+
+                        <label>
+                            <span>Constitution:</span>
+                            <input
+                                type="number"
+                                id="constitution"
+                                name="constitution"
+                            />
+                        </label>
+
+                        <label>
+                            <span>Intelligence:</span>
+                            <input
+                                type="number"
+                                id="intelligence"
+                                name="intelligence"
+                            />
+                        </label>
+
+                        <label>
+                            <span>Wisdom:</span>
+                            <input
+                                type="number"
+                                id="wisdom"
+                                name="wisdom"
+                            />
+                        </label>
+
+                        <label>
+                            <span>Charisma:</span>
+                            <input
+                                type="number"
+                                id="charisma"
+                                name="charisma"
+                            />
+                        </label>
+                        <button
+                            k-click="reset_stats"
+                            type="button"
+                            class="full"
+                        >Re-roll Stats</button>
+                    </div>
+
+                    <label>
+                        <span>Race:</span>
+                        <select
+                            id="race"
+                            name="race"
+                        >
+                            <option value="Human">Human</option>
+                            <option value="Elf">Elf</option>
+                            <option value="Fairy">Fairy</option>
+                            <option value="Dwarf">Dwarf</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>Class:</span>
+                        <select
+                            id="class"
+                            name="class"
+                        >
+                            <option value="Knight">Knight</option>
+                            <option value="Mage">Mage</option>
+                            <option value="Healer">Healer</option>
+                            <option value="Archer">Archer</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>Male</span>
+                        <input
+                            id="gender"
+                            name="gender"
+                            type="radio"
+                            value="Male"
+                            checked
+                        />
+                    </label>
+
+                    <label>
+                        <span>Female</span>
+                        <input
+                            id="gender"
+                            name="gender"
+                            type="radio"
+                            value="Female"
+                        />
+                    </label>
+
+                    <label>
+                        <span>Right-handed?</span>
+                        <input
+                            id="hand"
+                            name="hand"
+                            type="checkbox"
+                            value="right"
+                            checked
+                        />
+                    </label>
+
+                    <button
+                        type="submit"
+                        class="full"
+                    >Add Character</button>
+                </form>
+            </section>
+        </main>
+
+        <footer k-external="/app/components/TheFooter.html"></footer>
+    </body>
+</html>

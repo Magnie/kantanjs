@@ -108,3 +108,45 @@ td.other {
     background-color: rgb(47, 97, 206);
     color: white;
 }
+
+form {
+    max-width: 320px;
+}
+
+label {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+label > span {
+    flex-grow: 1;
+}
+
+label > input {
+    align-self: end;
+    border: 1px solid grey;
+    border-radius: 4px;
+    height: 24px;
+}
+
+label > select {
+    align-self: end;
+    border: 1px solid grey;
+    border-radius: 4px;
+    height: 24px;
+    width: 151px;
+    padding: 1px 2px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+td {
+    border: none;
+}
