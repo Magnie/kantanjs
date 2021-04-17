@@ -1,6 +1,7 @@
 kantan_app = attach_kantan({
     element_id: 'app',
     data: {
+        model: null,
         characters: [
             {
                 name: 'Sally Frost',
@@ -24,6 +25,7 @@ kantan_app = attach_kantan({
             'charisma',
         ],
         inputs: [
+            'id',
             'name',
             'gender',
             'hand',
@@ -37,6 +39,10 @@ kantan_app = attach_kantan({
             'charisma',
         ],
         show_portait: false,
+        show_form: false,
+        show_create: false,
+        show_edit: false,
+        edit_name: '',
     },
 
     methods: {
@@ -59,24 +65,73 @@ kantan_app = attach_kantan({
         },
 
         reset_stats() {
+            const nameInput = this.$element.querySelector('#name')
+            nameInput.value = ''
+            const idInput = this.$element.querySelector('#id')
+            idInput.value = ''
             for (const input_name of this.data.stats) {
                 const input = this.$element.querySelector(`#${input_name}`)
                 input.value = this.methods.roll_3d6()
             }
         },
 
-        add_character() {
+        save_character() {
             let character = {}
             for (const input_name of this.data.inputs) {
                 const input = this.$element.querySelector(`#${input_name}`)
                 character[input_name] = input.value
             }
-            this.data.characters.push(character)
-            console.log(this.data.characters)
+
+            this.data.model.save(character)
+
+            this.methods.get_characters()
+            this.data.show_form = false
+            this.data.show_create = false
+            this.data.show_edit = false
+        },
+
+        get_characters() {
+            if (!this.data.model) {
+                throw new Error('No model was provided!')
+            }
+            const tmp_characters = this.data.model.get_all()
+            let characters = []
+            for (const i in tmp_characters) {
+                characters.push(tmp_characters[i])
+            }
+            this.data.characters = characters
+        },
+
+        display_create_form() {
+            this.methods.reset_stats()
+            this.data.show_form = true
+            this.data.show_create = true
+            this.data.show_edit = false
+        },
+
+        display_edit_form(character_id) {
+            const character = this.data.model.get_by_id(character_id)
+            this.data.edit_name = character.name
+            for (const input_name of this.data.inputs) {
+                const input = this.$element.querySelector(`#${input_name}`)
+                input.value = character[input_name]
+            }
+
+            this.data.show_form = true
+            this.data.show_edit = true
+            this.data.show_create = false
+            this.$refresh()
+        },
+
+        display_delete_form(character_id) {
+        },
+
+        delete_character(character_id) {
         },
     },
 
     mounted() {
-        this.methods.reset_stats()
+        this.data.model = new RpgModel('local')
+        this.methods.get_characters()
     },
 })

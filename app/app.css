@@ -79,12 +79,6 @@ footer > p {
     text-align: right;
 }
 
-th {
-    width: 302px;
-    min-width: 302px;
-    color: slategrey;
-}
-
 tr:nth-child(even) td:nth-child(1) {
     background-color: aliceblue;
 }
@@ -140,6 +134,12 @@ label > select {
 
 table {
     border-collapse: collapse;
+}
+
+th {
+    width: 302px;
+    min-width: 302px;
+    color: slategrey;
 }
 
 tr {
