@@ -75,7 +75,47 @@ kantan_app = attach_kantan({
             }
         },
 
+        clear_errors() {
+            const errors = this.$element.querySelectorAll('.error')
+            for (const error of errors) {
+                error.classList.add('hide')
+            }
+        },
+
+        is_form_valid() {
+            let is_valid = true
+            this.methods.clear_errors()
+
+            // Validate name
+            const nameInput = this.$element.querySelector('#name')
+            if (nameInput.value.length === 0 || nameInput.value.length > 20) {
+                // Name must be between 1 and 20 characters
+                is_valid = false
+                this.$element.querySelector('#labelName + .error')
+                    .classList.remove('hide')
+            }
+
+            // Validate stats
+            for (const input_name of this.data.stats) {
+                const input = this.$element.querySelector(`#${input_name}`)
+                if (input.value <= 0 || input.value >= 19) {
+                    // Error
+                    const selector = `#label${input_name.capitalize()} + .error`
+                    console.log(selector)
+                    this.$element.querySelector(selector)
+                        .classList.remove('hide')
+                    is_valid = false
+                }
+            }
+
+            return is_valid
+        },
+
         save_character() {
+            if (! this.methods.is_form_valid()) {
+                return
+            }
+
             let character = {}
             for (const input_name of this.data.inputs) {
                 const input = this.$element.querySelector(`#${input_name}`)
@@ -104,12 +144,15 @@ kantan_app = attach_kantan({
 
         display_create_form() {
             this.methods.reset_stats()
+            this.methods.clear_errors()
             this.data.show_form = true
             this.data.show_create = true
             this.data.show_edit = false
+            this.data.show_delete = false
         },
 
         display_edit_form(character_id) {
+            this.methods.clear_errors()
             const character = this.data.model.get_by_id(character_id)
             this.data.edit_name = character.name
             for (const input_name of this.data.inputs) {
@@ -120,10 +163,15 @@ kantan_app = attach_kantan({
             this.data.show_form = true
             this.data.show_edit = true
             this.data.show_create = false
+            this.data.show_delete = false
             this.$refresh()
         },
 
         display_delete_form(character_id) {
+            this.data.show_form = true
+            this.data.show_edit = false
+            this.data.show_create = false
+            this.data.show_delete = true
         },
 
         delete_character(character_id) {
@@ -135,3 +183,8 @@ kantan_app = attach_kantan({
         this.methods.get_characters()
     },
 })
+
+// Thank you: https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1)
+}

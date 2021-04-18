@@ -193,3 +193,15 @@ td {
 .margin-bottom {
     margin-bottom: 8px;
 }
+
+.show {
+    display: initial;
+}
+
+.hide {
+    display: none;
+}
+
+.error {
+    color: red;
+}

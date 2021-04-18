@@ -38,7 +38,7 @@
                         name="id"
                     />
 
-                    <label>
+                    <label id="labelName">
                         <span>Name:</span>
                         <input
                             type="text"
@@ -46,9 +46,12 @@
                             name="name"
                         />
                     </label>
+                    <div class="error hide">
+                        The name should be between 1 and 20 characters long.
+                    </div>
 
                     <div class="margin-left-2x margin-top">
-                        <label>
+                        <label id="labelStrength">
                             <span>Strength:</span>
                             <input
                                 type="number"
@@ -56,8 +59,11 @@
                                 name="strength"
                             />
                         </label>
+                        <div class="error hide">
+                            The strength should be between 1 and 18.
+                        </div>
 
-                        <label>
+                        <label id="labelDexterity">
                             <span>Dexterity:</span>
                             <input
                                 type="number"
@@ -65,8 +71,11 @@
                                 name="dexterity"
                             />
                         </label>
+                        <div class="error hide">
+                            The dexterity should be between 1 and 18.
+                        </div>
 
-                        <label>
+                        <label id="labelConstitution">
                             <span>Constitution:</span>
                             <input
                                 type="number"
@@ -74,8 +83,11 @@
                                 name="constitution"
                             />
                         </label>
+                        <div class="error hide">
+                            The constitution should be between 1 and 18.
+                        </div>
 
-                        <label>
+                        <label id="labelIntelligence">
                             <span>Intelligence:</span>
                             <input
                                 type="number"
@@ -83,8 +95,11 @@
                                 name="intelligence"
                             />
                         </label>
+                        <div class="error hide">
+                            The intelligence should be between 1 and 18.
+                        </div>
 
-                        <label>
+                        <label id="labelWisdom">
                             <span>Wisdom:</span>
                             <input
                                 type="number"
@@ -92,8 +107,11 @@
                                 name="wisdom"
                             />
                         </label>
+                        <div class="error hide">
+                            The wisdom should be between 1 and 18.
+                        </div>
 
-                        <label>
+                        <label id="labelCharisma">
                             <span>Charisma:</span>
                             <input
                                 type="number"
@@ -101,6 +119,9 @@
                                 name="charisma"
                             />
                         </label>
+                        <div class="error hide">
+                            The charisma should be between 1 and 18.
+                        </div>
 
                         <button
                             k-click="reset_stats"
