@@ -28,6 +28,11 @@ class RpgModel {
         return id
     }
 
+    delete(id) {
+        delete this.#characters[id]
+        this.save_state()
+    }
+
     // Thank you to: https://stackoverflow.com/a/57355127/6055465
     generate_short_id(n) {
         var add = 1,

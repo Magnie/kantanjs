@@ -43,6 +43,7 @@ kantan_app = attach_kantan({
         show_create: false,
         show_edit: false,
         edit_name: '',
+        delete_character_id: null,
     },
 
     methods: {
@@ -76,7 +77,7 @@ kantan_app = attach_kantan({
         },
 
         clear_errors() {
-            const errors = this.$element.querySelectorAll('.error')
+            const errors = this.$element.querySelectorAll('div.danger')
             for (const error of errors) {
                 error.classList.add('hide')
             }
@@ -91,7 +92,7 @@ kantan_app = attach_kantan({
             if (nameInput.value.length === 0 || nameInput.value.length > 20) {
                 // Name must be between 1 and 20 characters
                 is_valid = false
-                this.$element.querySelector('#labelName + .error')
+                this.$element.querySelector('#labelName + .danger')
                     .classList.remove('hide')
             }
 
@@ -100,7 +101,7 @@ kantan_app = attach_kantan({
                 const input = this.$element.querySelector(`#${input_name}`)
                 if (input.value <= 0 || input.value >= 19) {
                     // Error
-                    const selector = `#label${input_name.capitalize()} + .error`
+                    const selector = `#label${input_name.capitalize()} + .danger`
                     console.log(selector)
                     this.$element.querySelector(selector)
                         .classList.remove('hide')
@@ -168,13 +169,27 @@ kantan_app = attach_kantan({
         },
 
         display_delete_form(character_id) {
-            this.data.show_form = true
+            this.data.delete_character_id = character_id
+            this.data.show_form = false
             this.data.show_edit = false
             this.data.show_create = false
             this.data.show_delete = true
+            this.$refresh()
         },
 
-        delete_character(character_id) {
+        delete_character() {
+            this.data.model.delete(this.data.delete_character_id)
+            this.methods.get_characters()
+            this.methods.hide_delete_form()
+            this.$refresh()
+        },
+
+        hide_delete_form() {
+            this.data.show_form = false
+            this.data.show_edit = false
+            this.data.show_create = false
+            this.data.show_delete = false
+            this.$refresh()
         },
     },
 

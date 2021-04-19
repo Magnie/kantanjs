@@ -28,6 +28,27 @@
                 </button>
             </section>
 
+            <section k-show="show_delete">
+                <h2 k-show="show_delete">Delete Character <span k-text="edit_name">?</span></h2>
+                Are you sure you want to delete <span k-text="edit_name"></span>?
+                <div>
+                    <button
+                        type="button"
+                        k-click="hide_delete_form"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="button"
+                        k-click="delete_character"
+                        class="danger"
+                    >
+                        Delete
+                    </button>
+                </div>
+            </section>
+
             <section k-show="show_form">
                 <h2 k-show="show_create">New Character</h2>
                 <h2 k-show="show_edit">Edit Character <span k-text="edit_name"></span></h2>
@@ -46,7 +67,7 @@
                             name="name"
                         />
                     </label>
-                    <div class="error hide">
+                    <div class="danger hide">
                         The name should be between 1 and 20 characters long.
                     </div>
 
@@ -59,7 +80,7 @@
                                 name="strength"
                             />
                         </label>
-                        <div class="error hide">
+                        <div class="danger hide">
                             The strength should be between 1 and 18.
                         </div>
 
@@ -71,7 +92,7 @@
                                 name="dexterity"
                             />
                         </label>
-                        <div class="error hide">
+                        <div class="danger hide">
                             The dexterity should be between 1 and 18.
                         </div>
 
@@ -83,7 +104,7 @@
                                 name="constitution"
                             />
                         </label>
-                        <div class="error hide">
+                        <div class="danger hide">
                             The constitution should be between 1 and 18.
                         </div>
 
@@ -95,7 +116,7 @@
                                 name="intelligence"
                             />
                         </label>
-                        <div class="error hide">
+                        <div class="danger hide">
                             The intelligence should be between 1 and 18.
                         </div>
 
@@ -107,7 +128,7 @@
                                 name="wisdom"
                             />
                         </label>
-                        <div class="error hide">
+                        <div class="danger hide">
                             The wisdom should be between 1 and 18.
                         </div>
 
@@ -119,7 +140,7 @@
                                 name="charisma"
                             />
                         </label>
-                        <div class="error hide">
+                        <div class="danger hide">
                             The charisma should be between 1 and 18.
                         </div>
 
