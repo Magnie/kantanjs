@@ -193,6 +193,7 @@ kantan_app = attach_kantan({
 
         display_delete_form(character_id) {
             this.data.delete_character_id = character_id
+            this.data.edit_name = this.data.model.get_by_id(character_id).name
             this.data.show_form = false
             this.data.show_edit = false
             this.data.show_create = false
@@ -203,11 +204,11 @@ kantan_app = attach_kantan({
         delete_character() {
             this.data.model.delete(this.data.delete_character_id)
             this.methods.get_characters()
-            this.methods.hide_delete_form()
+            this.methods.hide_form()
             this.$refresh()
         },
 
-        hide_delete_form() {
+        hide_form() {
             this.data.show_form = false
             this.data.show_edit = false
             this.data.show_create = false

@@ -1,0 +1,13 @@
+th {
+    width: 150px;
+    min-width: 150px;
+    color: slategrey;
+}
+
+tr:nth-child(even) td {
+    background-color: aliceblue;
+}
+
+td {
+    border: none;
+}

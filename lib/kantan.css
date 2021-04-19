@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5 {
     color: slategrey;
 }
 
-p, li {
+body, p, li {
     color: darkslategrey;
 }
 
@@ -38,8 +38,8 @@ button {
     font-size: 1.01em;
 }
 
-button.full {
-    width: 100%;
+button.grow {
+    flex-grow: 1;
 }
 
 nav button, nav .btn {
@@ -56,18 +56,48 @@ button:active, .btn:active {
 }
 
 button.blue, .btn.blue {
-    background-color: rgba(0, 0, 255, .05);
-    color: darkslategrey;
+    background-color: rgba(45, 111, 252, .8);
+    color: white;
     border: 0;
     padding: 8px;
 }
 
 button.blue:hover, .btn.blue:hover {
-    background-color: rgba(0, 0, 255, .1);
+    background-color: rgba(45, 111, 252, .9);
 }
 
 button.blue:active, .btn.blue:active {
-    background-color: rgba(0, 0, 255, .15);
+    background-color: rgba(45, 111, 252, 1);
+}
+
+button.green, .btn.green {
+    background-color: rgba(107, 255, 115, .8);
+    color: white;
+    border: 0;
+    padding: 8px;
+}
+
+button.green:hover, .btn.green:hover {
+    background-color: rgba(107, 255, 115, .9);
+}
+
+button.green:active, .btn.green:active {
+    background-color: rgba(107, 255, 115, 1);
+}
+
+button.teal, .btn.teal {
+    background-color: rgba(27, 171, 159, .8);
+    color: white;
+    border: 0;
+    padding: 8px;
+}
+
+button.teal:hover, .btn.teal:hover {
+    background-color: rgba(27, 171, 159, .9);
+}
+
+button.teal:active, .btn.teal:active {
+    background-color: rgba(27, 171, 159, 1);
 }
 
 tr, td {
@@ -203,10 +233,10 @@ td {
 }
 
 .danger {
-    color: red;
+    color: #FE2163;
 }
 
 button.danger {
-    background-color: red;
+    background-color: #FE2163;
     color: white;
 }

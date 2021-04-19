@@ -9,7 +9,7 @@
         <script src="/lib/kantan.js"></script>
 
         <link rel="stylesheet" href="/app/app.css">
-        <link rel="stylesheet" href="/rpg/css/styles.css">
+        <link rel="stylesheet" href="/rpg/css/rpg.css">
         <script src="/rpg/js/rpg-model.js"></script>
         <script src="/rpg/js/rpg-controller.js"></script>
     </head>
@@ -23,6 +23,7 @@
                 <button
                     type="button"
                     k-click="display_create_form"
+                    class="blue"
                 >
                     Create Character
                 </button>
@@ -34,7 +35,7 @@
                 <div>
                     <button
                         type="button"
-                        k-click="hide_delete_form"
+                        k-click="hide_form"
                     >
                         Cancel
                     </button>
@@ -147,7 +148,7 @@
                         <button
                             k-click="reset_stats"
                             type="button"
-                            class="full"
+                            class="teal full"
                         >
                             Re-roll Stats
                         </button>
@@ -210,21 +211,31 @@
                         />
                     </label>
 
-                    <button
-                        k-show="show_create"
-                        type="submit"
-                        class="full"
-                    >
-                        Add Character
-                    </button>
+                    <div class="flex-row">
+                        <button
+                            type="button"
+                            k-click="hide_form"
+                            class="teal grow"
+                        >
+                            Cancel
+                        </button>
 
-                    <button
-                        k-show="show_edit"
-                        type="submit"
-                        class="full"
-                    >
-                        Save
-                    </button>
+                        <button
+                            k-show="show_create"
+                            type="submit"
+                            class="grow blue"
+                        >
+                            Add Character
+                        </button>
+
+                        <button
+                            k-show="show_edit"
+                            type="submit"
+                            class="grow blue"
+                        >
+                            Save
+                        </button>
+                    </div>
                 </form>
             </section>
 
@@ -249,6 +260,7 @@
                                 <button
                                     type="button"
                                     k-click="display_edit_form(character.id)"
+                                    class="blue"
                                 >
                                     Edit
                                 </button>
@@ -256,6 +268,7 @@
                                 <button
                                     type="button"
                                     k-click="display_delete_form(character.id)"
+                                    class="danger"
                                 >
                                     Delete
                                 </button>

@@ -139,14 +139,10 @@ table {
 th {
     width: 302px;
     min-width: 302px;
-    color: slategrey;
+    color: #366FFF;
 }
 
 tr {
     border: 1px solid grey;
     border-radius: 4px;
-}
-
-td {
-    border: none;
 }
