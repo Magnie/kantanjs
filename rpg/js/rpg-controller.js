@@ -28,7 +28,7 @@ kantan_app = attach_kantan({
             'id',
             'name',
             'gender',
-            'hand',
+            'isRight',
             'race',
             'class',
             'strength',
@@ -102,7 +102,6 @@ kantan_app = attach_kantan({
                 if (input.value <= 0 || input.value >= 19) {
                     // Error
                     const selector = `#label${input_name.capitalize()} + .danger`
-                    console.log(selector)
                     this.$element.querySelector(selector)
                         .classList.remove('hide')
                     is_valid = false
@@ -119,7 +118,22 @@ kantan_app = attach_kantan({
 
             let character = {}
             for (const input_name of this.data.inputs) {
-                const input = this.$element.querySelector(`#${input_name}`)
+                let selector = `#${input_name}`
+
+                // If gender, handle radio input
+                if (input_name === 'gender') {
+                    selector = `#${input_name}:checked`
+                }
+                const input = document.querySelector(selector)
+
+                // If the hand input, handle checkbox
+                if (input_name === 'isRight') {
+                    input.checked
+                    character['isRight'] = input.checked ? true : false
+                    continue
+                }
+
+                // All other input fields
                 character[input_name] = input.value
             }
 
@@ -157,6 +171,15 @@ kantan_app = attach_kantan({
             const character = this.data.model.get_by_id(character_id)
             this.data.edit_name = character.name
             for (const input_name of this.data.inputs) {
+                if (input_name === 'gender') {
+                    selector = `#${input_name}`
+                    const inputs = this.$element.querySelectorAll(selector)
+                    const value = character[input_name]
+                    for (const input of inputs) {
+                        input.checked = input.value == value ? true : false
+                    }
+                    continue
+                }
                 const input = this.$element.querySelector(`#${input_name}`)
                 input.value = character[input_name]
             }
